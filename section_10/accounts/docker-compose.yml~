@@ -1,0 +1,34 @@
+services:
+    accounts:
+        image: "kayandajoseph14/accounts:s4"
+        container_name: accounts-ms
+        ports:
+            - "8080:8080"
+        deploy:
+            resources:
+                limits:
+                    memory: 700m
+        networks:
+            - kayandajoseph14-network
+    loans:
+        image: "kayandajoseph14/loans:s4"
+        container_name: loans-ms
+        ports:
+            - "8090:8090"
+        deploy:
+            resources:
+                limits:
+                    memory: 700m
+        networks:
+            - kayandajoseph14-network
+    cards:
+        image: "kayandajoseph14/cards:s4"
+        container_name: cards-ms
+        ports:
+            - "9000:9000"
+        deploy:
+            resources:
+                limits:
+                    memory: 700m
+        networks:
+            - kayandajoseph14-network
